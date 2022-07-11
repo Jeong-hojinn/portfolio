@@ -1,0 +1,489 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+
+
+/* font-family: 'Cairo', sans-serif;
+font-family: 'Do Hyeon', sans-serif; */
+
+/* home */
+.nav{
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    height: 60px;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+}
+.nav ul{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+}
+.nav ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+    line-height: 60px;
+    height: 60px;
+}
+.nav ul li a{
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+}
+.nav ul li.on a{
+    font-weight: bold;
+    color: #000;
+}
+
+.home h2{
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    font-size: 5.8vw;
+    color: #f7f7f7;
+    font-style: italic;
+    letter-spacing: -3px;
+    font-family: 'Cairo', sans-serif;
+}
+.home p{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    font-size: 2.8vw;
+    color: #f7f7f7;
+    font-style: italic;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    transition: 1s;
+    opacity: 0;
+}
+#particle{
+    width: 100vw;
+    height: 100vh;
+    transition: 2s;
+    opacity: 0;
+}
+/* home */
+
+/* about */
+.about .left,
+.about .right{
+    font-family: 'Do Hyeon', sans-serif;
+    text-align: center;
+    width: 47vw;
+    float: left;
+}
+.about .left{
+    padding: 20vh 12.5%;
+    box-sizing: border-box;
+}
+.about .right{
+    padding: 20vh 0 11.8vh 0;
+}
+
+.about .left *,
+.about .right *{
+    font-family: 'Do Hyeon', sans-serif;
+}
+.about .left p{
+    font-size: 1.25vw;
+    color: #f7f7f7;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    transition: 1s;
+    opacity: 0 ;
+}
+.about .left p:nth-of-type(1){
+    font-size: 1.875vw;
+}
+.about .left p span{
+    color: #fdf9c2;
+}
+.about .left img {
+    border-radius: 50%;
+    width: 15.625vw;
+    margin: 3.0959vh 0;
+    transition: 1s;
+    opacity: 0;
+}
+.about .left h2{
+    font-size: 3.125vw;
+    color: #fdf9c2;
+    transition: 1s;
+    opacity: 0;
+}
+.about .right h2{
+    font-size: 1.875vw;
+    line-height: 1.5;
+    color: #f7f7f7;
+    transition: 1s;
+    opacity: 0;
+}
+.about .right p{
+    font-size: 1.25vw;
+    line-height: 1.3;
+    color: #f7f7f7;
+    transition: 1s;
+    opacity: 0;
+}
+.about .right p:nth-of-type(1){
+    margin-top: 2vh;  
+}
+.about .right .props-wrap{
+    width: 35vw;
+    margin: 0 auto;
+}
+.about .right .props-wrap .prop{
+    float: left;
+    width: 11.6666vw;
+    height: 11.6666vw;
+    margin-top: 3.1vh;
+    transition: 1s;
+    opacity: 0;
+}
+.about .right .props-wrap .prop .icon{
+    width: 80%;
+    height: 80%;
+    background-color: rgba(255,255,255,0.3);
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+}
+.about .right .props-wrap .prop .icon img{
+    position: absolute;
+    width: 55.86%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.about .right .props-wrap .prop p{
+    margin-top: 0.72vh;
+}
+.about .sep-line{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    height: 0%;
+    transition: 1s;
+    border-left: 2px solid #f7f7f7;
+}
+/* about */
+
+/* skill */
+.skill .fp-tableCell,
+.work .fp-tableCell,
+.contact .fp-tableCell{
+    vertical-align:  top;
+    /* fullpage 속성 */
+}
+.skill .fp-tableCell > h2,
+.work > h2,
+.contact .fp-tableCell > h2{
+    text-align: center;
+    margin-top: 8vh;
+    font-size: 2.8vw;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    position: relative;
+    opacity: 0;
+}
+.skill .fp-tableCell > h2::after,
+.work > h2::after,
+.contact .fp-tableCell > h2::after{
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: 3px;
+    background-color: #000;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transition: 0.5s 1.5s;
+    /* 0.5초를 1.5초 뒤에 실행하겠다. */
+}
+.skill .fp-tableCell > h2.on::after,
+.work > h2.on::after,
+.contact .fp-tableCell > h2.on::after{
+    transform: translateX(-50%) scaleX(1);
+}
+.skill .progress-area{
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    width: 51vw;
+    transform: translateX(-50%);
+}
+.skill .progress-area .progress{
+    float: left;
+    width: 15vw;
+    height: 15vw;
+    margin: 1vw;
+    position: relative;
+    opacity: 0;
+    transition: 0.5s;
+}
+.skill .progress-area .progress p{
+    position: absolute;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+}
+.progressbar-text{
+    top: 15% !important;
+    font-size: 1.5vw;
+}
+/* skill */
+
+/* work */
+.work h2{
+    margin-top: 0;
+    top: 7vh;
+    font-size: 3vw;
+}
+.work .container{
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 80%;
+    opacity: 0;
+}
+.work .container ul li{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid orange;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.work .container ul li:hover,
+.work .container ul li.on{
+    background-color: orange;
+}
+.work .container ul li a{
+    transition: 0.4s;
+    font-size: 14px;
+}
+.work .container ul li:hover a,
+.work .container ul li.on a{
+    color: #fff;
+}
+.work .container .slide{
+    text-align: center;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.work .container .slide .item{
+    width: 23%;
+    float: left; 
+    margin: 5px;
+    cursor: pointer;
+}
+.work .container .slide .item img{
+    border-radius: 30px;
+    width: 100%;
+    height: 200px;
+}
+/* work */
+
+/* modal */
+
+.window{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    /* 모달창은 전체를감싸서 가로세로100% */
+    display: none;
+}
+.window-content{
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: scroll;
+    /* 모달창에서 스크롤이있으려면 위의속성이 필요한다. */
+    display: none;
+}
+.window-content img{width: 100%;}
+/* modal */
+
+/* contact */
+.contact .content{
+    max-width: 1500px;
+    background-color: rgba(26,26,26,0.35);
+    margin: 0 auto;
+    margin-top: 100px;
+    height: 600px;
+    border-radius: 10px;
+    transition: 0.5s 2.5s;
+    opacity: 0;
+}
+.contact .content > div{
+    float: left;
+    margin-top: 250px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+.contact .content .left{
+    width: 30%;
+    opacity: 0;
+}
+.contact .content .center{
+    width: 34%;
+    opacity: 0;
+}
+.contact .content .right{
+    width: 30%;
+    opacity: 0;
+}
+/* contact */
+
+/* 반응형 */
+@media screen and (max-width: 640px){
+    .home p{
+        font-size: 5.5vw;
+        width: 100%;
+        text-align: center;
+    }
+    .home h2{
+        font-size: 9.5vw;
+    }
+    .nav ul li a{
+        font-size: 13px;
+    }
+    .about .sep-line{
+        display: none;
+    }
+    .about .left{
+        width: 100%;
+        float: none;
+        padding-top: 10vh;
+        padding-bottom: 5vw;
+    }
+    .about .right{
+        width: 100%;
+        float: none;
+        padding-top: 0;
+    }
+    .about .left p,
+    .about .right p,
+    .about .left p:nth-child(1){
+        font-size: 4vw;
+    }
+    .about .left h2,
+    .about .right h2{
+        font-size: 4.5vw;
+    }
+    .about .right .props-wrap{
+        width: 70vw;
+    }
+    .about .right .props-wrap .prop{
+        width: 23vw;
+        height: 23vw;
+        margin-top: 6.1vw;
+    }
+    .about .right .props-wrap .prop p{
+        font-size: 3.5vw;
+        margin-top: 0;
+    }
+    .skill .fp-tableCell > h2,
+    .work h2,
+    .contact .fp-tableCell > h2{
+        font-size: 8vw;
+        margin-top: 10vw;
+    }
+    .skill .fp-tablecell > h2::after,
+    .work h2::after,
+    .contact .fp-tablecell > h2::after{
+        bottom: 10px;
+    }
+    .skill .progress-area{
+        width: 100%;
+        top: 20vh;
+    }
+    .skill .progress-area .progress{
+        width: 45vw;
+        height: 40vw;
+    }
+    .skill .progress-area .progress:nth-child(odd){
+        margin-right: 5vw;
+    }
+    .skill .progress-area .progress p{
+        font-size: 3.6vw;
+    }
+    .skill .progress-area .progressbar-text{
+        font-size: 5vw;
+        font-weight: bold;
+    }
+    .work .container ul{
+        margin-top: 0;
+    }
+    .work .container ul li{
+        width: 100%;
+        display: block;
+        margin-bottom: 1vw;
+        text-align: center;
+        line-height: 33px;
+        padding: 0;
+    }
+    .work .container ul li a{
+        font-size: 2.5vw;
+        display: inline-block;
+        width: 100%;
+    }
+    .work .container .slide .item{
+        width: 30%;
+    }
+    .work .container .slide .item img{
+        height: auto;
+    }
+    .work .container .slide{
+        margin-top: 15vw;
+    }
+    .work .fp-controlArrow.fp-next{
+        right: 10px;
+        top: 60%;
+        border-width: 18.5px 0 18.5px 14px;
+    }
+    .work .fp-controlArrow.fp-prev{
+        left: 10px;
+        top: 60%;
+        border-width: 18.5px 14px 18.5px 0;
+    }
+    .contact .content{
+        max-width: 640px;
+        width: 100%;
+        height: 510px;
+    }
+    .contact .fp-tableCell{
+        padding: 0 2%;
+    }
+    .contact .content .left,
+    .contact .content .center,
+    .contact .content .right{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .contact .content .left{margin-top: 40px;}
+}
+
+/* 반응형 */
